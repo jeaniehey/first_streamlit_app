@@ -37,7 +37,7 @@ import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
-my_data_rows = my_cur.fetchall()
+my_data_rows = list(my_cur.fetchall())
 
 fruit_choice = streamlit.text_input('What fruite would you like to add?','jackfruit')
 streamlit.write('The user entered ', fruit_choice)
