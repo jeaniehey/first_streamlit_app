@@ -44,7 +44,8 @@ streamlit.write('The user entered ', fruit_choice)
 
 streamlit.text("The fuit load list contains:")
 streamlit.text(my_data_rows)
-add_myfruit = pandas.json_normalize(my_data_rows.json())
+add_myfruit = pandas.DataFrame(my_data_rows)
+add_myfruit.show()
 streamlit.dataframe(add_myfruit)
 
 
